@@ -1,0 +1,17 @@
+﻿<Window x:Class="AdvertesingAgency.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdvertesingAgency"
+        mc:Ignorable="d"
+        Title="Меню"  Height="384" Width="472.727"  Style="{StaticResource windowStyle}">
+    <Grid>
+        <Image Style="{StaticResource logoImageStyle}" Height="69" Margin="72,10,0,0" Width="347"/>
+        <Button  Content="Клиенты" HorizontalAlignment="Center" Margin="0,107,0,0" VerticalAlignment="Top" Height="35" Width="120" Click="OpenClientWindow_Button"/>
+        <Button  Content="Заказы" HorizontalAlignment="Center" Margin="0,179,0,0" VerticalAlignment="Top" Height="35" Width="120" Click="OpenOrderWindow_Button"/>
+        <Button  Content="Список услуг" HorizontalAlignment="Center" Margin="0,249,0,0" VerticalAlignment="Top" Height="35" Width="120" Click="OpenServiceWindow_Button"/>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3b81610cad4848098514bab10c63c5ab" Name="Diagram1">
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.Client" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.Contract_status" Width="1.5" PointX="1.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.Dept" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.list_purpose" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.Payment_status" Width="1.5" PointX="1.5" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.Service" Width="1.5" PointX="0.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.Status_service" Width="1.5" PointX="0.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.User" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <AssociationConnector Association="AdvertisingAgencyModel.FK_list_purpose_Dept1" ManuallyRouted="false" />
+        <AssociationConnector Association="AdvertisingAgencyModel.FK_User_Dept" ManuallyRouted="false" />
+        <AssociationConnector Association="AdvertisingAgencyModel.FK_list_purpose_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="AdvertisingAgencyModel.FK_list_purpose_Status_service" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AdvertisingAgencyModel.Contract" Width="1.5" PointX="6.625" PointY="15.5" />
+        <AssociationConnector Association="AdvertisingAgencyModel.FK_Contract_Client" />
+        <AssociationConnector Association="AdvertisingAgencyModel.FK_Contract_Contract_status" />
+        <AssociationConnector Association="AdvertisingAgencyModel.FK_Contract_Payment_status" />
+        <AssociationConnector Association="AdvertisingAgencyModel.FK_list_purpose_Contract" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

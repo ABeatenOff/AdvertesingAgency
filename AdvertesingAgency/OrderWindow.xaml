@@ -1,0 +1,45 @@
+﻿<Window x:Name="OrderWindowForm" x:Class="AdvertesingAgency.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdvertesingAgency"
+        mc:Ignorable="d"
+        Title="OrderWindow" Height="485" Width="935" Loaded="OrderWindowForm_Loaded"  Style="{StaticResource windowStyle}">
+    <Grid>
+        <DataGrid x:Name="OrderGrid" Margin="10,164,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"  AutoGenerateColumns="False" Height="260" Width="739" CanUserAddRows="false" IsReadOnly="true">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер заказа" Binding="{Binding ContractNumber}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Клиент">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Tag="{Binding id_client}" MouseDoubleClick="Client_MouseDoubleClick" Content="{Binding ClientFIO}"></Label>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Дата составления" Binding="{Binding DataPrepar}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата исполнения" Binding="{Binding DataExec}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Состояние оплаты" Binding="{Binding PayStatus}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Подробности заказа" Binding="{Binding ContractDetails}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Статус заказа" Binding="{Binding ContractStat}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Редактирование">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Tag="{Binding ContractNumber}" Content ="Редактирование"  Click ="ButtonEditContract"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="AddOrderButton" Content="Добавить заказ" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="AddOrderButton_Click"/>
+        <Button x:Name="ServiceListButton" Content="Список услуг" HorizontalAlignment="Left" Margin="763,294,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="ServiceListButton_Click"/>
+        <Button x:Name="BackMenuButton" Content="Назад" HorizontalAlignment="Left" Margin="763,345,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="BackMenuButton_Click"/>
+        <Button x:Name="ExitButton" Content="Выход" HorizontalAlignment="Left" Margin="763,394,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="ExitButton_Click"/>
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="385,22,0,0" TextWrapping="Wrap" TextChanged="Searching" Text=""  Width="120"/>
+        <Label Content="Поиск по Клиенту" HorizontalAlignment="Left" Margin="271,18,0,0" VerticalAlignment="Top"/>
+     
+        <Label Content="Фильтр по:" HorizontalAlignment="Left" Margin="608,18,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="StatusCombo"  DisplayMemberPath="name_payment_status" HorizontalAlignment="Left" Margin="684,20,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="StatusCombo_SelectionChanged" />
+        <Button x:Name="CancelFiltrClient" Content="Отмена фильтрации" HorizontalAlignment="Left" Margin="684,59,0,0" VerticalAlignment="Top" Width="120" Click="CancelFiltrClient_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,33 @@
+﻿<Window x:Class="AdvertesingAgency.ServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdvertesingAgency"
+        mc:Ignorable="d"
+        Title="Список услуг" Height="450" Width="915"  Style="{StaticResource windowStyle}">
+    <Grid>
+        <DataGrid x:Name="ServiceGrid" Margin="10,141,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"  AutoGenerateColumns="False" Height="260" Width="739" CanUserAddRows="false" IsReadOnly="true">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ услуги заказа" Binding="{Binding id_purpose}"></DataGridTextColumn>
+                <DataGridTextColumn Header="№ Заказа" Binding="{Binding id_contract}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Услуга" Binding="{Binding service}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Готовность услуги" Binding="{Binding status_service}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Назначенный отдел" Binding="{Binding dept}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Редактирование">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Tag="{Binding id_purpose}" Content ="Редактировать"  Click ="ButtonEditPurpose"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ButtonAddService" Content=" Добавление&#xD;&#xA;услуги заказу" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Height="40" Width="86" Click="ButtonAddService_Click"/>
+        <Label Content="Фильтрация:" HorizontalAlignment="Left" Margin="692,17,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="FiltrBox" HorizontalAlignment="Left" Margin="776,19,0,0" VerticalAlignment="Top" Width="120"  DisplayMemberPath="service_status_name" SelectionChanged="FiltrBox_SelectionChanged"/>
+        <Button x:Name="BackMenuButton" Content="Назад к меню" HorizontalAlignment="Left" Margin="775,298,0,0" VerticalAlignment="Top" Height="40" Width="86" Click="BackMenuButton_Click"/>
+        <Button x:Name="ExitButton" Content="Выйти" HorizontalAlignment="Left" Margin="776,361,0,0" VerticalAlignment="Top" Height="40" Width="86" Click="ExitButton_Click"/>
+        <Button x:Name="CancelFiltrStatus" Content="Отмена фильтрации" HorizontalAlignment="Left" Margin="776,61,0,0" VerticalAlignment="Top" Width="120" Click="CancelFiltrClient_Click"/>
+    </Grid>
+</Window>

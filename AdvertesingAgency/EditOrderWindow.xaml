@@ -1,0 +1,39 @@
+﻿<Window x:Class="AdvertesingAgency.EditOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdvertesingAgency"
+        mc:Ignorable="d"
+        Title="Редактирование заказа" Height="369" Width="523"  Style="{StaticResource windowStyle}">
+    <Grid>
+        <Label Content="Клиент" HorizontalAlignment="Left" Margin="88,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Дата создания" HorizontalAlignment="Left" Margin="88,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Дата исполнения" HorizontalAlignment="Left" Margin="88,103,0,0" VerticalAlignment="Top"/>
+        <Label Content="Состояние оплаты" HorizontalAlignment="Left" Margin="88,134,0,0" VerticalAlignment="Top"/>
+        <Label Content="Подробности заказа" HorizontalAlignment="Left" Margin="82,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="Статус заказа" HorizontalAlignment="Left" Margin="88,227,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SaveChangeButton" Content="Сохранить изменеия" HorizontalAlignment="Center" Margin="0,280,0,0" VerticalAlignment="Top" Width="140" Click="SaveChangeButton_Click"/>
+        <TextBox x:Name="DateCreatBox" HorizontalAlignment="Left" Margin="214,74,0,0" TextWrapping="Wrap" Text="{Binding date_preparation}"  VerticalAlignment="Top" Width="108"/>
+        <TextBox x:Name="DateExecBox" HorizontalAlignment="Left" Margin="214,107,0,0" TextWrapping="Wrap"  Text="{Binding date_execution}" VerticalAlignment="Top" Width="108"/>
+        <TextBox x:Name="DescroptionBox" HorizontalAlignment="Left" Margin="214,167,0,0" TextWrapping="Wrap" Text="{Binding contract_details}"  VerticalAlignment="Top" Width="236" Height="49"/>
+        <ComboBox x:Name="ClientCombo" HorizontalAlignment="Left" SelectedItem="{Binding Client}" Margin="214,41,0,0" VerticalAlignment="Top" Width="236">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{} {0} {1} {2}">
+                                <Binding Path="name"></Binding>
+                                <Binding Path="surname"></Binding>
+                                <Binding Path="patronymic"></Binding>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="PayStatusCombo" HorizontalAlignment="Center"  SelectedItem="{Binding Payment_status}" DisplayMemberPath="name_payment_status" Margin="0,136,0,0" VerticalAlignment="Top" Width="96"/>
+        <ComboBox x:Name="OrderStatusCombo" HorizontalAlignment="Center" SelectedItem="{Binding Contract_status}" DisplayMemberPath="contract_status_name" Margin="0,231,0,0" VerticalAlignment="Top" Width="96"/>
+
+    </Grid>
+</Window>

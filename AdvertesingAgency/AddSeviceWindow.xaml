@@ -1,0 +1,21 @@
+﻿<Window x:Class="AdvertesingAgency.AddSeviceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdvertesingAgency"
+        mc:Ignorable="d"
+        Title="Добавление услуги" Height="371" Width="489"  Style="{StaticResource windowStyle}">
+    <Grid>
+        <Label Content="№ заказа" HorizontalAlignment="Left" Margin="94,72,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="IdOrderCombo" HorizontalAlignment="Left" SelectedItem="{Binding Contract}" DisplayMemberPath="id_contract" Margin="243,74,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Услуга" HorizontalAlignment="Left" Margin="94,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Готовность услуги" HorizontalAlignment="Left" Margin="94,157,0,0" VerticalAlignment="Top"/>
+        <Label Content="Назначенный отдел" HorizontalAlignment="Left" Margin="94,201,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ServiceCombo" SelectedItem="{Binding Service}" DisplayMemberPath="name_service" HorizontalAlignment="Left" Margin="243,114,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="StatusServiceCombo" HorizontalAlignment="Left" SelectedItem="{Binding Status_service}" DisplayMemberPath="service_status_name" Margin="243,159,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="DeptCombo" HorizontalAlignment="Left" SelectedItem="{Binding Dept}" DisplayMemberPath="dept_name" Margin="243,203,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="AddServiceButton" Content="Добавить" HorizontalAlignment="Center" Margin="0,287,0,0" VerticalAlignment="Top" Click="AddServiceButton_Click"/>
+
+    </Grid>
+</Window>
